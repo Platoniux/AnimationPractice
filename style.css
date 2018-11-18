@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.block {
+  display: inline-flex;
+  height: 100vh;
+  width: 49.5%;
+}
+
+.column {
+  background-color: white;
+  background-image: radial-gradient(#FFAE38 2px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/*first anim*/
+.first_container {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+  
+  animation-name: controtate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes controtate {
+  from {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(135deg);
+  }
+
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+.sq {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid black;
+  transform: rotate(45deg);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /*animation-direction: reverse;*/
+  animation-timing-function: ease-in-out;
+}
+
+.red {
+  animation-name: redrotate;
+}
+
+@keyframes redrotate {
+  from {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+
+  50% {
+    transform: translate(-100%, 0);
+    border: 5px solid red;
+  }
+
+  to {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+}
+
+.blue {
+  animation-name: bluerotate;
+}
+
+@keyframes bluerotate {
+  from {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+
+  50% {
+    transform: translate(100%, 0);
+    border: 5px solid blue;
+  }
+
+  to {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+}
+
+.yellow {
+  animation-name: yellowrotater;
+}
+
+@keyframes yellowrotater {
+  from {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+
+  50% {
+    transform: translate(0, -100%);
+    border: 5px solid yellow;
+  }
+
+  to {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+}
+
+.crimson {
+  animation-name: crimsonrotate;
+}
+
+@keyframes crimsonrotate {
+  from {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+
+  50% {
+    transform: translate(0, 100%);
+    border: 5px solid crimson;
+  }
+
+  to {
+    transform: translate(0);
+    border: 5px solid black;
+  }
+}
+
+/*second anim*/
+.second_container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Permanent Marker', sans-serif;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  display: flex;
+  background-color: #BDD0D7;
+  box-shadow: 5px 5px #ABBABF;
+}
+
+.clock-display {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.clock-display:after {
+  content: '';
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  left: 49.5%;
+  top: 18%;
+  width: 2px;
+  height: 50px;
+  border: 1px solid red;
+  transform-origin: 100% 100%; 
+  animation-name: hand;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock-display:hover .hand {
+  animation-play-state: paused;
+}
+
+.clock-numbers {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  width: 120px;
+  height: 120px;
+  list-style-type: none;
+}
+
+.clock-numbers li {
+  position: absolute;
+  font-size: 14px;
+}
+
+.clock-numbers li:first-child {
+  top: -50%;
+}
+
+.clock-numbers li:nth-child(2) {
+  left: 90%;
+}
+
+.clock-numbers li:nth-child(3) {
+  top: 55%;
+  left: 40%;
+}
+
+.clock-numbers li:last-child {
+  left: -10%;
+}
+
+p {
+  margin: 20px auto;
+}
